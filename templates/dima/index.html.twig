@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DimaController!{% endblock %}
+
+{% block body %}
+
+<div>
+    This friendly message is coming from:
+    <ul>
+       
+    </ul>
+    {% if articles %}
+    <table class="table table-stripted">
+        <thead>
+        <th> Article Title</th>
+        <th> Actions</th>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+        <tr>
+            <td>{{ article }} </td>
+            <td><a class="btn btn-dark" href="#"> Here </a> </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    {% endif %}
+</div>
+<h1> Dima </h1>
+{% endblock %}
