@@ -10,16 +10,20 @@
        
     </ul>
     {% if articles %}
-    <table class="table table-stripted">
+    <table class="table table-stripted" id="articles">
         <thead>
         <th> Article Title</th>
         <th> Actions</th>
+        <th> Edit</th>
+        <th> Delete</th>
         </thead>
         <tbody>
         {% for article in articles %}
         <tr>
             <td>{{ article.title }} </td>
             <td><a class="btn btn-dark" href="show/{{ article.id }}"> Show </a> </td>
+            <td><a class="btn btn-light " href="edit/{{ article.id }}"> Edit </a> </td>
+            <td><a class="btn btn-danger" data-id="{{ article.id }}" href="dima/delete/{{ article.id }}"> Delete </a> </td>
         </tr>
         {% endfor %}
         </tbody>
@@ -27,5 +31,8 @@
     {% else %}
     {% endif %}
 </div>
-<h1> Dima </h1>
 {% endblock %}
+ {% block javascripts %}
+        <script src="js/main.js"></script>
+</script>
+        {% endblock %}
