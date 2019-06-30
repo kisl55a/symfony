@@ -21,7 +21,7 @@ class DimaController extends AbstractController
         $articles = $this->getDoctrine()->getRepository
         (Dima::class)->findAll();
         return $this->render('dima/index.html.twig',  
-    array( 'articles' => $articles)
+    array('articles' => $articles)
     );
     }
      /**
